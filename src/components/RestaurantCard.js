@@ -10,8 +10,9 @@ const RestaurantCard=(props)=>{
             <div className='rating-time'>
                 <span>{star} Star</span>
                 <span>{time} Mins</span>
-                <span>₹ {costForTwo} For Two</span>
+                
             </div>
+            <div className="cost-two"><span>₹ {costForTwo} For Two</span></div>
         </div>
     )
 }
