@@ -1,11 +1,27 @@
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
+import ShimmerUi from "./ShimmerUI";
 
 const Body=()=>{
-    const[listOfRest,setListOfRest]=useState(resList);
+    const[listOfRest,setListOfRest]=useState([]);
 
+    useEffect(()=>{
+        fetchData();
+    },[])
 
+    const fetchData = async () => {
+        const data = await fetch("https://66d0b136181d059277df7063.mockapi.io/api/zippy/retaurantsName");
+        const restData = await data.json();
+        
+        
+
+        setListOfRest(restData)
+        
+    };
+
+    if(listOfRest.length===0){
+        return <ShimmerUi/> 
+    }
     return(
         <div className='body'>
             {/* <div className='search'>
@@ -14,7 +30,7 @@ const Body=()=>{
             <div className='filter'>
                 <button 
                 onClick={()=>{
-                    const filteredList=listOfRest.filter(res=>res.star>4.5);
+                    const filteredList=listOfRest.filter(res=>res.avgRating>4.5);
 
                     setListOfRest(filteredList);
                 }}>

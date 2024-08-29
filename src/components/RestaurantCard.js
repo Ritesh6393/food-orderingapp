@@ -1,18 +1,19 @@
+
 const RestaurantCard=(props)=>{
-    const {restName,cuisines,image,star,time,costForTwo}=props.resObject;
+    const {name,cuisines,image,avgRating,deliveryTime,costForTwo}=props.resObject;
     return(
         <div className='res-card'>
             
             <img className='res-logo' src={image}></img>
 
-            <h3 className='res-name'>{restName}</h3>
+            <h3 className='res-name'>{name}</h3>
             <h5>{cuisines.join(", ")}</h5>
             <div className='rating-time'>
-                <span>{star} Star</span>
-                <span>{time} Mins</span>
+                <span>{avgRating} Star</span>
+                <span>{deliveryTime} Mins</span>
                 
             </div>
-            <div className="cost-two"><span>₹ {costForTwo} For Two</span></div>
+            <div className="cost-two"><span>₹ {costForTwo}</span></div>
         </div>
     )
 }

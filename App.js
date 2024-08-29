@@ -5,10 +5,6 @@ import Body from './src/components/Body';
 
 
 
-
-
-
-
 const AppLayout =() => {
     return(
     <div className='app'>
