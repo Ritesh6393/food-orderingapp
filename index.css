@@ -1,14 +1,75 @@
-.header{
-    align-items: center;
+.header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    border:1px solid black;
+    border: 1px solid black;
     border-radius: 10px;
- 
+    padding: 10px; /* Add padding for better alignment */
 }
 
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns search-container and filter-btn */
+    margin: 10px 5px;
+    background-color: #e0f7fa;
+    border: 1px solid blanchedalmond;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center; /* Vertically center the input and button */
+    flex-grow: 1; /* Allow the search section to take more space */
+    padding: 10px;
+}
+
+.search-container input {
+    width: 80%; /* Adjust width to take 80% of the available space */
+    padding: 10px 20px; /* Match padding with buttons */
+    font-size: 1rem; /* Match font size with buttons */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.search-button {
+    margin-left: 10px; /* Space between input and button */
+    padding: 10px 20px; /* Match padding with input and "Top Rated" button */
+    border-radius: 8px; /* Match border-radius with buttons */
+    font-size: 1rem; /* Match font size with buttons */
+    background-color: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #004d40; /* Same hover effect as filter button */
+}
+
+.filter-btn {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px; /* Pushes the button to the far right */
+}
+
+.filter-btn:hover {
+    background-color: #004d40;
+}
+
+/* The rest of your existing CSS remains unchanged */
+
+
+/* The rest of your existing CSS remains unchanged */
 .logo {
-    
     width: 100px;
     border-radius: 50px;
 }
@@ -18,26 +79,22 @@
     display: flex;
     padding: 0;
     margin: 0;
-            
-     
 }
-
 
 .nav-items ul li {
     font-size: x-large;
-    padding: 10px 20px; 
-    margin: 0 10px; 
-    color: black; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-        /* Hover effect for list items */
 .nav-items ul li:hover {
     background-color: #f5f5f5ee;
-    
 }
-.res-container{
+
+.res-container {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -46,26 +103,26 @@
 }
 
 .res-card {
-    margin:10px;
+    margin: 10px;
     padding: 10px;
     width: 200px;
     height: 300px;
     border: 1px solid black;
-    background-color:#e0f7fa; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.2s, box-shadow 0.2s; 
+    background-color: #e0f7fa;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
+
 .res-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); 
-    background-color: #e0f7fa; 
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #e0f7fa;
     cursor: pointer;
     border: 1px solid red;
-    border-radius: 5px;
 }
 
 .search {
@@ -73,75 +130,35 @@
 }
 
 .res-logo {
-    width:100%;
+    width: 100%;
 }
 
-.rating-time{
+.rating-time {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
-.res-name{
+.res-name {
     text-align: center;
 }
 
-
-.search {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .search input {
-    width: 80%;
-    padding: 10px;
-    font-size: 1.2rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .cost-two {
+.cost-two {
     margin-top: 14px;
-  }
-
-  .filter {
-    margin: 10px 5px;
-    background-color: #e0f7fa;
-    border: 1px solid blanchedalmond;
-    padding: 10px; 
-    border-radius: 5px; 
-    display: inline-block; 
 }
 
-.filter button {
-    background-color: #00796b; 
-    color: white; 
-    border: none; 
-    padding: 8px 16px; 
-    border-radius: 3px; 
-    cursor: pointer; 
-    font-size: 14px;
-}
-
-.filter button:hover {
-    background-color: #004d40; 
-}
-
-
-.shimmer-container{
+.shimmer-container {
+    padding: 40px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .shimmer-card {
-    margin:10px;
+    margin: 10px;
     padding: 10px;
     width: 200px;
     height: 300px;
     border: 1px solid black;
-    background-color:gainsboro; 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
+    background-color: gainsboro;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-
 }
