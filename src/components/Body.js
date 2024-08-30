@@ -5,6 +5,7 @@ import ShimmerUi from "./ShimmerUI";
 const Body = () => {
     const [listOfRest, setListOfRest] = useState([]);
     const [searchedInputValue,setSearchedInputVlaue]=useState("");
+    const [filteredResList,setFilterdResList]=useState("");
 
     useEffect(() => {
         fetchData();
@@ -14,6 +15,7 @@ const Body = () => {
         const data = await fetch("https://66d0b136181d059277df7063.mockapi.io/api/zippy/retaurantsName");
         const restData = await data.json();
         setListOfRest(restData);
+        setFilterdResList(restData)
     };
 
     if (listOfRest.length === 0) {
@@ -31,19 +33,19 @@ const Body = () => {
                     <button className="search-button" onClick={()=>{
                         const searchedRestList=listOfRest.filter(res=>res.name.toLowerCase().includes(searchedInputValue.toLocaleLowerCase()))
 
-                        setListOfRest(searchedRestList);
+                        setFilterdResList(searchedRestList);
                     }}>Search</button>
                 </div>
                 <button className="filter-btn"
                     onClick={() => {
                         const filteredList = listOfRest.filter(res => res.avgRating > 4.5);
-                        setListOfRest(filteredList);
+                        setFilterdResList(filteredList);
                     }}>
                     Top Rated Restaurants
                 </button>
             </div>
             <div className='res-container'>
-                {listOfRest.map((restaurant) => {
+                {filteredResList.map((restaurant) => {
                     return (<RestaurantCard key={restaurant.id} resObject={restaurant}></RestaurantCard>)
                 })}
             </div>
